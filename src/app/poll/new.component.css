@@ -1,0 +1,93 @@
+.add-poll-form {
+  margin: 30px auto;
+  width: 40%;
+  display: block;
+}
+
+.question {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+}
+
+.question p {
+  margin: 0;
+}
+
+.title input, .options input {
+  width: 100%;
+  display: block;
+  font-size: 20px;
+  box-shadow: none;
+}
+
+.title input:focus, .options input:focus {
+  outline: none;
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+.style-1 {
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+.add {
+  margin: 15px auto;
+  width: 152px;
+  cursor: pointer;
+}
+
+.add img {
+  transition: transform .7s ease-in-out;
+  margin: 0 5px;
+}
+
+.add img:hover {
+  transform: rotateZ(10deg);
+}
+
+.options {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.sub {
+  display: inline-block;
+  height:64px;
+  width: 64px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.sub img {
+  position: absolute;
+  top: -2px;
+  left: -7px;
+}
+
+@media screen and (max-width: 1200px) {
+  .add-poll-form {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .add-poll-form {
+    width: 75%;
+  }
+}
+
+.link a {
+  color: white;
+  text-decoration: none;
+  margin: 30px auto;
+  font-size: 40px;
+  display: block;
+  text-align: center;
+}

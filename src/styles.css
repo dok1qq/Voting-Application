@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: JosefinSansRegular;
+  src: url('./assets/fonts/JosefinSans-Regular.ttf');
+}
+
+/*@font-face {*/
+  /*font-family: JosefinSansRegularBold;*/
+  /*src: url('./assets/fonts/JosefinSans-Bold.ttf');*/
+/*}*/
+
+/*@font-face {*/
+  /*font-family: JosefinSansRegularSemiBold;*/
+  /*src: url('./assets/fonts/JosefinSans-SemiBold.ttf');*/
+/*}*/
+
+/*body {*/
+  /*padding: 0;*/
+  /*margin: 0;*/
+  /*background: rgb(32,45,53);*/
+  /*font-family: JosefinSansRegular, Tahoma;*/
+  /*color: white;*/
+/*}*/
+
+body{
+  padding: 0;
+  margin: 0;
+  background: rgb(32,45,53);
+  font-family: JosefinSansRegular, Tahoma;
+}
+
+.wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    width: 100%;
+  }
+}

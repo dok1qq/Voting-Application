@@ -1,0 +1,50 @@
+<div class="wrapper">
+  <div *ngIf="!toggle" class="radio">
+    <div class="question">
+      <p>{{ vote?.title}}</p>
+    </div>
+
+    <ul style="display: block;">
+        <li *ngFor="let item of vote?.data; let i = index" >
+          <input type="radio" id="poll-{{i}}" name="poll">
+          <label for="poll-{{i}}" (click)="prepareToVote(i)">{{vote?.labels[i]}}</label>
+
+          <div class="check"><div class="inside"></div></div>
+        </li>
+    </ul>
+
+    <div class="send">
+      <button class="btn" (click)="toVote()" [disabled]="prepare == null">To vote</button>
+    </div>
+  </div>
+
+
+  <div *ngIf="toggle" class="graphics">
+    <div class="nav">
+        <button (click)="changeChart('bar')">Bar</button>
+        <button (click)="changeChart('pie')">Pie</button>
+        <button (click)="changeChart('radar')">Radar</button>
+        <button (click)="changeChart('polar')">Polar Area</button>
+        <button (click)="changeChart('doughnut')">Doughnut</button>
+    </div>
+
+    <div style="width: 80%; margin: 0 auto;" class="shape">
+      <bar-component *ngIf="charts.bar" [barChartData]="barChartData" [barLabels]="vote?.labels" ></bar-component>
+      <doughnut-component *ngIf="charts.doughnut" [doughnutChartData]="barChartData[0].data" [doughnutChartLabels]="vote?.labels"></doughnut-component>
+      <polar-component *ngIf="charts.polar" [polarAreaChartData]="barChartData[0].data" [polarAreaChartLabels]="vote?.labels"></polar-component>
+      <pie-component *ngIf="charts.pie" [pieChartData]="barChartData[0].data" [pieChartLabels]="vote?.labels"></pie-component>
+      <radar-component *ngIf="charts.radar" [radarChartData]="barChartData" [radarChartLabels]="vote?.labels"></radar-component>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

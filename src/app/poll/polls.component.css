@@ -1,0 +1,111 @@
+.my-polls {
+  color: white;
+  width: 70%;
+  margin: 0 auto;
+  /*font-size: 40px;*/
+}
+
+.title {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+}
+
+.title p {
+  margin: 0;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 30px;
+  color: white;
+}
+
+tr {
+  background: white;
+  color: #333;
+}
+
+th {
+  background: #333;
+  color: white;
+  font-weight: bold;
+}
+
+td, th {
+  padding: 6px;
+  border: 1px solid #333;
+  text-align: left;
+}
+
+td img {
+  display: block;
+  width: 24px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+tr a {
+  text-decoration: none;
+  color: #333;
+}
+
+@media screen and (max-width: 1200px) {
+  .my-polls {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .my-polls {
+    width: 90%;
+  }
+}
+
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr { border: 1px solid #ccc; }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  td:nth-of-type(1):before { content: "Poll titile"; }
+  td:nth-of-type(2):before { content: "Reset"; }
+  td:nth-of-type(3):before { content: "Delete"; }
+}

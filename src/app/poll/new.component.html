@@ -1,0 +1,69 @@
+<!--(ngSubmit)="submitForm(pollForm.value, pollForm.valid)"-->
+
+<div class="wrapper">
+  <form #pollForm="ngForm" (ngSubmit)="submitForm(pollForm.value, pollForm.valid)" class="add-poll-form" *ngIf="link == null">
+
+    <div class="question">
+      <p>Write your new poll</p>
+    </div>
+
+    <div class="title">
+      <input type="text" id="title" name="title" minlength="5" required placeholder="Input your question"
+             [(ngModel)]="poll.title" #title="ngModel" class="style-1">
+    </div>
+
+    <div class="add">
+      <img (click)="addOptions()" src="../../assets/img/plus.png" alt="Add option">
+      <button type="submit" class="sub" [disabled]="!pollForm.form.valid">
+        <img src="../../assets/img/send.png" alt="Send">
+      </button>
+    </div>
+
+    <div class="options">
+      <input type="text" name="first" minlength="2" required placeholder="Input your option"
+             [(ngModel)]="poll.options.first" #first="ngModel" class="style-1"> <br>
+
+      <input type="text" name="second" minlength="2" required placeholder="Input your option"
+             [(ngModel)]="poll.options.second" #second="ngModel" class="style-1"> <br>
+
+      <input type="text" name="third" minlength="2" placeholder="Input your option"
+             [(ngModel)]="poll.options.third" #third="ngModel"
+             *ngIf="poll.options.third != 'hidden'" class="style-1"> <br>
+
+      <input type="text" name="fourth" minlength="2"  placeholder="Input your option"
+             [(ngModel)]="poll.options.fourth" #fourth="ngModel"
+             *ngIf="poll.options.fourth != 'hidden'" class="style-1"> <br>
+
+      <input type="text" name="fifth" minlength="2" placeholder="Input your option"
+             [(ngModel)]="poll.options.fifth" #fifth="ngModel"
+             *ngIf="poll.options.fifth != 'hidden'" class="style-1"> <br>
+
+      <input type="text" name="sixth" minlength="2" placeholder="Input your option"
+             [(ngModel)]="poll.options.sixth" #sixth="ngModel" class="style-1"
+             *ngIf="poll.options.sixth != 'hidden'"> <br>
+
+      <input type="text" name="seventh" minlength="2" placeholder="Input your option"
+             [(ngModel)]="poll.options.seventh" #seventh="ngModel" class="style-1"
+             *ngIf="poll.options.seventh != 'hidden'"> <br>
+
+      <input type="text" name="eighth" minlength="2" placeholder="Input your option"
+             [(ngModel)]="poll.options.eighth" #eighth="ngModel" class="style-1"
+             *ngIf="poll.options.eighth != 'hidden'"> <br>
+
+      <input type="text" name="ninth" minlength="2" placeholder="Input your option"
+             [(ngModel)]="poll.options.ninth" #ninth="ngModel" class="style-1"
+             *ngIf="poll.options.ninth != 'hidden'"> <br>
+
+      <input type="text" name="tenth" minlength="2" placeholder="Input your option"
+             [(ngModel)]="poll.options.tenth" #tenth="ngModel" class="style-1"
+             *ngIf="poll.options.tenth != 'hidden'"> <br>
+    </div>
+  </form>
+
+  <div class="link" *ngIf="link != null">
+      <a href="{{link}}" target="_blank" rel="noopener noreferrer">Your link to vote is: {{link}}</a>
+  </div>
+</div>
+
+
+

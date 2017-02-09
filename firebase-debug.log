@@ -1,0 +1,58 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      D:\Program Files\nodejs\node.exe C:\Users\Mikhail\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] CLI Version:  3.2.1
+[debug] Platform:     win32
+[debug] Node Version: v6.5.0
+[debug] Time:         Thu Feb 09 2017 17:25:06 GMT+0300 (Russia TZ 2 Standard Time)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/votingapp-e046f 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/votingapp-e046f/tokens 
+[debug] <<< HTTP RESPONSE 500
+[debug] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 500, An unknown error occurred. Please contact support.
+[debug] Error Context: {
+  "body": {
+    "error": {
+      "code": "UNKNOWN_ERROR",
+      "message": "An unknown error occurred. Please contact support."
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": "UNKNOWN_ERROR",
+        "message": "An unknown error occurred. Please contact support."
+      }
+    },
+    "headers": {
+      "server": "nginx",
+      "date": "Thu, 09 Feb 2017 14:25:10 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "97",
+      "connection": "close",
+      "x-content-type-options": "nosniff"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "admin.firebase.com",
+        "port": 443,
+        "hostname": "admin.firebase.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1/database/votingapp-e046f/tokens",
+        "path": "/v1/database/votingapp-e046f/tokens",
+        "href": "https://admin.firebase.com/v1/database/votingapp-e046f/tokens"
+      },
+      "method": "GET"
+    }
+  }
+}

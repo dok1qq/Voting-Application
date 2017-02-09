@@ -1,0 +1,44 @@
+
+<div class="wrapper">
+  <div class="header">
+    <div *ngIf="id == null" class="auth">
+      <div class="box">
+        <img src="../../assets/img/google.png" alt="Auth with google."
+             (click)="loginWithGoogle()" >
+      </div>
+      <div class="box">
+        <img src="../../assets/img/twitter.png" alt="Auth with twitter."
+             (click)="loginWithTwitter()" >
+      </div>
+      <div class="box">
+        <img src="../../assets/img/github-logo.png" alt="Auth with github."
+             (click)="loginWithGitgub()" >
+      </div>
+      <div class="box">
+        <img src="../../assets/img/anonymous-logo.png" alt="Auth anonymous."
+             (click)="loginWithFacebook()" >
+      </div>
+    </div>
+
+    <div *ngIf="id != null" class="profile">
+      <div class="photo" (click)="logout()">
+        <img *ngIf="photo != null" src="{{photo}}" alt="Welcome, {{name}}" />
+        <img *ngIf="photo == null" src="../../assets/img/user.png" alt="Welcome, {{name}}"/>
+      </div>
+      <div class="username">
+        {{name}}
+      </div>
+    </div>
+
+    <div *ngIf="id != null" class="navigation">
+      <ul>
+        <li>
+          <img title="My polls" [routerLink]="['/polls']" src="../../assets/img/polls.png" alt="">
+        </li>
+        <li>
+          <img title="Add poll" [routerLink]="['/new']" src="../../assets/img/poll.png" alt="">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

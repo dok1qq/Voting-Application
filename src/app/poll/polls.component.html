@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div class="my-polls">
+    <div class="title">
+      <p>My Polls</p>
+    </div>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Poll title</th>
+        <th>Reset poll</th>
+        <th>Delete poll</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="poll" *ngFor="let poll of polls">
+        <td><a [routerLink]="['/voting', poll?.$key]">{{poll?.title}}</a></td>
+        <td><img (click)="resetPoll(poll?.$key, poll?.data)" src="../../assets/img/rotate.png" alt="Reset"></td>
+        <td><img (click)="deletePoll(poll?.$key)" src="../../assets/img/delete.png" alt="Delete"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
